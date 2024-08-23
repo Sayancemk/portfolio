@@ -49,7 +49,7 @@ export default function Navabr() {
     },
   ];
   return (
-    <div className="flex z-50 justify-center w-full fixed top-12 left-0 scale-75 sm:scale-90">
+    <div className="flex z-50 justify-center w-full fixed top-10 sm:top-12 left-0 scale-75 sm:scale-90">
       <FloatingDock
         mobileClassName="hidden"
         desktopClassName="flex"
