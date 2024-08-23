@@ -75,6 +75,10 @@ const config = {
           "0%": { backgroundPosition: "top center" },
           "100%": { backgroundPosition: "bottom center" },
         },
+        pulse: {
+          "0%, 100%": { boxShadow: "0 0 0 0 var(--pulse-color)" },
+          "50%": { boxShadow: "0 0 0 8px var(--pulse-color)" },
+        },
         spotlight: {
           "0%": {
             opacity: '0',
@@ -91,6 +95,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
         backgroundPositionSpin:"background-position-spin 3000ms infinite alternate",
+        pulse: "pulse var(--duration) ease-out infinite",
       },
     },
   },
