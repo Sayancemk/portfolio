@@ -117,7 +117,7 @@ export default function Skills() {
                                 <AnimatedCircularProgressBar 
                                     key={index}
                                     max={100}
-                                    className="mx-4 my-6"
+                                    className="mx-4 my-6 size-24 text-sm"
                                     min={0}
                                     value={skill.value}
                                     gaugePrimaryColor={skill.color}
