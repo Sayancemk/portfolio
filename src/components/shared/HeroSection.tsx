@@ -10,7 +10,7 @@ export default function HeroSection() {
   const words = 'I have 2 years of experience in the field of IT. I have worked on various projects and have experience in various technologies. I am a quick learner and always ready to learn new technologies.I am a hardworking and dedicated person. I am always ready to take on new challenges and work hard to achieve my goals. I am passionate about my work and always strive to deliver the best results. I am looking for new opportunities to grow and develop my skills.';
 
   return (
-    <div className="w-full">
+    <div className="w-full" id='home'>
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="blue"
