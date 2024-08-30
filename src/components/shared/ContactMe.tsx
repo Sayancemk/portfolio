@@ -7,6 +7,7 @@ function ContactMe() {
   const { register, handleSubmit } = useForm();
 
   const submit = async (data:any) => {
+    const { name, email, message } = data;
     console.log(data);
   };
 
@@ -26,21 +27,21 @@ function ContactMe() {
             type="text"
             {...register('name',{required:true})}
             placeholder="Your name"
-            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full px-4 py-2 dark:bg-neutral-950 dark:placeholder:text-neutral-700 bg-white placeholder:text-neutral-800 text-black dark:text-white"
+            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full px-4 py-2 bg-gray-700"
             required
           />
           <input
             type="email"
             {...register('email',{required:true})}
             placeholder="Your email address"
-            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full px-4 py-2 dark:bg-neutral-950 dark:placeholder:text-neutral-700 bg-white placeholder:text-neutral-800 text-black dark:text-white"
+            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full px-4 py-2 bg-gray-700"
             required
           />
           <textarea
             {...register('message',{required:true})}
             placeholder="Your message"
-            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full p-4 dark:bg-neutral-950 dark:placeholder:text-neutral-700 bg-white placeholder:text-neutral-800 text-black dark:text-white"
-            rows={5}
+            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full p-4 bg-gray-700"
+            rows={4}
             required
           ></textarea>
           <button

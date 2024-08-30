@@ -4,6 +4,7 @@ import Skills from "@/components/shared/Skills";
 import Projects from "@/components/shared/Projects";
 import Education from "@/components/shared/Education";
 import ContactMe from "@/components/shared/ContactMe";
+import Footer from "@/components/shared/Footer";
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
       <Projects />
       <Education />
       <ContactMe />
+      <Footer />
     </main>
   );
 }

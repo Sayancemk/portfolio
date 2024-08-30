@@ -1,36 +1,22 @@
-'use server';
 
-const nodemailer = require("nodemailer");
+import { resend } from "@/lib/resend";
+import { EmailTemplate } from '../components/email-template';
 
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  host: "smtp.gmail.com",
-  port: 587,
-  auth: {
-    user: process.env.GMAIL_APP_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-});
-
-export async function (name:string, email:string, message:string) {
-  const mailOptions = {
-    from: {
-      name: "Portfolio Contact Form",
-      address: process.env.GMAIL_APP_USER
-    },
-    to: email,
-    subject: `${name} sent you a message`,
-    text: message,
-  };
-
-  transporter.sendMail(mailOptions,(err:any,info:any)=>{
-    if (err) {
-      console.log("error in sending Email",err);
-      return false;
-    } else {
-      return true;
-    }
-  })
-};
-
+export async function sendEmail(
+  email: string,
+  name: string,
+  message: string
+): Promise<any> {
+  try {
+    await resend.emails.send({
+      from: `${name} <onboarding@resend.dev>`,
+      to: 'sayanmaity0121@gmail.com',
+      subject: `New message from ${name}`,
+      react: EmailTemplate({ name, email, message }),
+    });
+    return { success: true, message: 'Verification email sent successfully.' };
+  } catch (emailError) {
+    console.error('Error sending verification email:', emailError);
+    return { success: false, message: 'Failed to send verification email.' };
+  }
+}
