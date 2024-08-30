@@ -4,6 +4,7 @@ import HyperText from "@/components/magicui/hyper-text";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import Link from "next/link";
 import Image from 'next/image';
+import { IconBrandGithub } from '@tabler/icons-react';
 
 const projects = [
   {
@@ -51,7 +52,7 @@ export default function Projects() {
         {
           projects.map((project, index) => (
             <CardContainer className="inter-var" key={index}>
-          <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl px-3 py-6 min-[500px]:p-6 border  ">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -82,16 +83,16 @@ export default function Projects() {
                 target="__blank"
                 className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
               >
-                Try now →
+                Visit now →
               </CardItem>
               <CardItem
                 translateZ={20}
                 as={Link}
                 href={project.github}
                 target="__blank"
-                className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                className="px-4 py-2 flex flex-nowrap items-center rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
               >
-                Github
+                <IconBrandGithub /><span className='ml-1'>Github</span>
               </CardItem>
             </div>
           </CardBody>
