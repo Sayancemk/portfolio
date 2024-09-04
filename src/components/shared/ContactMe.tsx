@@ -2,13 +2,15 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { sendEmail } from '@/lib/sendEmail';
 
 function ContactMe() {
   const { register, handleSubmit } = useForm();
 
   const submit = async (data:any) => {
     const { name, email, message } = data;
-    console.log(data);
+    const res = await sendEmail(email, name, message);
+    console.log(res)
   };
 
   return (
